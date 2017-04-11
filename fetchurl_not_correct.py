@@ -9,7 +9,7 @@ class FetchUrls(threading.Thread):
 
     """
 
- 
+
 
     def __init__(self, urls, output):
 
@@ -17,7 +17,7 @@ class FetchUrls(threading.Thread):
 
         Constructor.
 
- 
+
 
         @param urls list of urls to check
 
@@ -31,7 +31,7 @@ class FetchUrls(threading.Thread):
 
         self.output = output
 
-     
+
 
     def run(self):
 
@@ -61,7 +61,7 @@ class FetchUrls(threading.Thread):
 
             print 'URL %s fetched by %s' % (url, self.name)
 
-        
+
 def main():
 
     # list 1 of urls to fetch
@@ -88,7 +88,7 @@ def main():
 
     f.close()
 
- 
+
 
 if __name__ == '__main__':
 

@@ -4,9 +4,11 @@ import time
 start = time.time()
 received_packages = re.compile(r"(\d) received")
 status = ("no response","alive but losses","alive")
+sfx = ["10.20.32.94","8.8.8.8"]
 
-for suffix in range(1,5):
-    ip = "192.168.43."+str(suffix)
+for suffix in sfx:
+    #ip = "192.168.43."+str(suffix)
+    ip = suffix
     ping_out = os.popen("ping -q -c2 "+ip,"r")
     print( "... pinging ",ip)
 

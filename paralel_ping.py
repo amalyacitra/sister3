@@ -23,13 +23,16 @@ class ip_check(threading.Thread):
             return "alive"
         else:
             return "shouldn't occur"
-            
+
 received_packages = re.compile(r"(\d) received")
 
 start = time.time()
 check_results = []
-for suffix in range(1,5):
-    ip = "192.168.43."+str(suffix)
+sfx = ["10.20.32.94","8.8.8.8"]
+
+for suffix in sfx:
+    #ip = "192.168.43."+str(suffix)
+    ip = suffix
     current = ip_check(ip)
     check_results.append(current)
     current.start()

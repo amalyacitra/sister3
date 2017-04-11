@@ -9,7 +9,7 @@ class FetchUrls(threading.Thread):
 
     """
 
- 
+
     #
     def __init__(self, urls, output,lock):
 
@@ -17,7 +17,7 @@ class FetchUrls(threading.Thread):
 
         Constructor.
 
- 
+
 
         @param urls list of urls to check
 
@@ -33,8 +33,8 @@ class FetchUrls(threading.Thread):
 
         # add code here
         self.lock = lock
-        
-     
+
+
 
     def run(self):
 
@@ -58,7 +58,7 @@ class FetchUrls(threading.Thread):
 
                 print ('URL %s failed: %s' % (url, e.reason) )
 
-            #            
+            #
             self.lock.acquire()
 
             #
@@ -66,21 +66,21 @@ class FetchUrls(threading.Thread):
 
             self.output.write(d.read())
 
-            
+
             print ('write done by %s' % self.name)
             #
             print ('lock released by %s' % self.name)
             #
-            self.lock.release()            
+            self.lock.release()
 
             print ( 'URL %s fetched by %s' % (url, self.name) )
 
-        
+
 def main():
 
     #
     lock = threading.Lock()
-    
+
     # list 1 of urls to fetch
 
     urls1 = ['http://www.google.com', 'http://www.facebook.com']
@@ -105,7 +105,7 @@ def main():
 
     f.close()
 
- 
+
 
 if __name__ == '__main__':
 
